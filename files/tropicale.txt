@@ -1,0 +1,11 @@
+<h1> Foresta tropicale stagionale </h1>
+<p>
+Sono le formazioni forestali che si distribuiscono al di fuori delle zone equatoriali
+e si trovano in regioni dove vi sono differenze molto marcate tra i periodi di pioggia e quelli di siccità.
+<b>Un esempio è il clima monsonico dell'India.</b>
+</p>
+
+<p>
+Queste condizioni sono ideali per generare foreste in cui metà o quasi tutte le sue specie perdono 
+le foglie con l'arrivo della stagione secca per compensare il deficit di pioggia.
+</p>

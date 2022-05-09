@@ -1,0 +1,22 @@
+<h1> Foresta mediterranea </h1>
+<p>
+Conosciuto anche come chaparral e caratterizzato da un clima mediterraneo 
+(inverni umidi ed estati calde e secche), è distribuito nell'Europa meridionale 
+ma anche sulla costa meridionale dell'Australia, 
+della California, del Cile e sulla costa occidentale dell' Messico.
+</p>
+
+<p>
+Con boschetti di querce, lecci e querce da sughero, 
+crescono anche <b>arbusti densi con foglie piccole e robuste adattate 
+alle condizioni di siccità</b>. In estate sono frequenti gli incendi che 
+rendono i loro alberi incapaci di assumere troppa longevità. 
+In effetti, hanno specie che producono semi resistenti al fuoco.
+</p>
+
+<p>
+Al contrario, la fauna non ha molte specie endemiche. 
+Le lepri abbondano nell'area mediterranea, anche se la lince iberica è in 
+pericolo di estinzione, in California il coyote e in Cile la lucertola 
+piangente.
+</p>

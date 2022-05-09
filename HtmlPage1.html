@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <meta charset="utf-8" />
+    <title>Prova di jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="ambienti" class="ambienti-group">
+        <button id="equatorialebutton">Foresta Equatoriale</button>
+        <button id="tropicalebutton">Foresta tropicale</button>
+        <button id="lenzuolobutton">Lenzuolo</button>
+        <button id="deciduabutton">Foresta decidua</button>
+        <button id="sempreverdebutton">Foresta sempreverde temperata</button>
+        <button id="mediterraneabutton">Foresta mediterranea</button>
+        <button id="steppabutton">Steppe</button>
+        <button id="taigabutton">Taiga</button>
+        <button id="tundrabutton">Tundra</button>
+        <button id="desertobutton">Deserto</button>
+        <button id="paludebutton">Palude</button>
+        <button id="marinobutton">Ambiente marino</button>
+    </div>
+
+    <div class="mode">
+        <button id="Party" class="Party">Party</button>
+        <button id="Map" class="Map">Map</button>
+        <button id="Game" class="Game">Game</button>
+        <button id="Indizi" class="Indizi">Indizi</button>
+        <button id="Clear" class="Clear">Clear</button>
+        <button id="Debug" class="Debug">Debug</button>
+    </div>
+
+    <button id="nuovo" class="New">Nuovo bioma</button>
+
+    <script language="Javascript">
+
+        $("#ambienti").find("button").on("click", function (event) {
+            var rand = -1;
+            var t = $(this).attr("id");
+            //$("#buttons").append(t + " ");
+            //RESET
+            //$("#svg").load("files/BackupHard.txt");
+            $("#buttons").load("files/nothing.txt");
+            //  CERCHI
+            //Prende i valori per disegnare il cerchio dai valori per i quadrati dell'SVG
+            var x = document.getElementById(t.slice(0, -6) + "square").getAttribute("x");
+            var y = document.getElementById(t.slice(0, -6) + "square").getAttribute("y");
+            var r = document.getElementById(t.slice(0, -6) + "square").getAttribute("r");
+            var c = document.getElementById(t.slice(0, -6) + "square").getAttribute("color");
+            //$("#buttons").append(t.slice(0,-6));
+            var toInsert = '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" stroke="' + c + '" stroke-width="4" fill="none"/>';
+            var svg = $("#svg").html();
+            $("#svg").html(svg + toInsert);
+
+            //  ARTICOLO
+            //Gli aricoli sono contenuti dentro files
+
+            jQuery.get("files/" + t.slice(0, -6) + ".txt", function (textString) {//Da equatorialebutton a equatoriale.txt
+                data = textString;
+                data += '<div><img src="img/' + t.slice(0, -6) + '.jpg" style="display: block ;right: 20px; background-size: contain; width: 100%; right: 15px;"> </div>';
+                $("#buttons").append(data);
+                /*
+                $("#buttons").load(
+                    "files/" + t.slice(0, -6) + ".txt p,h1,img"
+                );
+                */
+            });
+
+        });
+
+
+        $('#Party').on("click", function (event) {
+            if ($("#buttons").css("background-image") === 'url("https://localhost:44323/img/Background.png")') {
+                $("#buttons").css({ "background-image": "linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%)" });
+            }
+            else {
+                $("#buttons").css({ "background-image": 'url("https://localhost:44323/img/Background.png")' });
+            }
+        });
+
+        $("#Map").on("click", function (event) {
+            if ($("#buttons").css("opacity") === "1") {
+                $("#buttons").css({ "opacity": "0%" });
+            }
+            else {
+                $("#buttons").css({ "opacity": "100%" });
+            }
+        });
+
+        $("#Indizi").on("click", function (event) {
+            if (document.getElementById("equatorialesquare").getAttribute("opacity") === "30%") {
+                $("#svg").load("files/BackupHard.txt");
+            }
+            else {
+                $("#svg").load("files/Backup.txt")
+            }
+        });
+
+        $("#Clear").on("click", function (event) {
+            $("#svg").load("files/BackupHard.txt");
+            $("#buttons").load("files/nothing.txt");
+        });
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        var num = 11;
+        var rand = -1;
+        var debug = false;
+        var biomi = new Array("equatoriale", "tropicale", "lenzuolo", "decidua", "sempreverde", "mediterranea", "steppa", "taiga", "tundra", "deserto", "palude", "marino");
+
+        $("#Game").on("click", function (event) {
+            $("#svg").load("files/BackupHard.txt");
+            //($("#svg").html('<svg id="svg"></svg>'); hehe mi cancellava tutto
+            //$("#svg").getElementById.css({ "opacity": "0" });
+            $("#buttons").html("<p>Testiamo le tue conoscenze sui biomi! \n</p>");
+
+            rand = getRandomInt(num);
+            $("#buttons").append("<p>Indica dove si trova il clima <b>" + biomi[rand] + "</b>! trascina il bioma <b>" + biomi[rand] + "</b> nel punto corretto </p>");
+        });
+
+        $("#Debug").on("click", function (event) {
+            debug = true;
+        });
+
+        $("#nuovo").on("click", function (event) {
+            
+            if ($("#formsquare").css("display") === "block")
+                $("#formsquare").hide();
+            else
+                $("#formsquare").show();
+            
+            //$("#buttons").append("<p>" + $("#formsquare").css("display") + "</p>");
+            //document.getElementById("ambienti").innerHTML += '<button id="marinobutton">Ambiente marino</button>';
+        });
+
+        function handleSubmit(event) {
+
+            // Stop the form from reloading the page
+            event.preventDefault();
+
+            // If there's no file, do nothing
+            if (!file.value.length) return;
+
+            // Create a new FileReader() object
+            let reader = new FileReader();
+
+            // Setup the callback event to run when the file is read
+            reader.onload = logFile;
+
+            // Read the file
+            reader.readAsDataURL(file.files[0]);
+        }
+
+        //salva in una variabile il set di bottoni
+        let textbutton = document.querySelector("#buttons");
+
+        function logFile(event) {
+            let str = event.target.result;
+            $("#buttons").append(str);
+            let img = document.createElement('img');
+            img.src = str;
+            app.append(img);
+            console.log(str);
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text"),
+                img = document.getElementById(data),
+                imgSrc = img.getAttribute('src'),
+                imgW = img.getAttribute('width'),
+                imgH = img.getAttribute('height'),
+                //for example you can calculate X position from event circle
+                imgX = ev.target.getAttribute('cx') - ev.target.getAttribute('r');
+            var currentMousePos = { x: -1, y: -1 };
+            currentMousePos.x = event.pageX - 50;
+            currentMousePos.y = event.pageY - 120;
+
+            var immagine = "<b>sbagliata</b>",
+                posizione = "<b>sbagliata</b>";
+
+
+            if (rand != -1) {
+                corX = parseInt(document.getElementById(biomi[rand] + "square").getAttribute("x"));
+                corY = parseInt(document.getElementById(biomi[rand] + "square").getAttribute("y"));
+
+                if (debug)
+                    $("#svg").append('<rect id="' + biomi[rand] + "square" + '+ " x="' + (corX - 50) + '" y="' + (corY - 50) + '" width="100" height="100" opacity="100%" />');
+                else
+                    $("#svg").append('<rect id="' + biomi[rand] + "square" + '+ " x="' + (corX - 50) + '" y="' + (corY - 50) + '" width="100" height="100" opacity="0%" />');
+
+                if (biomi[rand] === data) { immagine = "<b>corretta</b>"; }
+
+                if (corX + 50 > event.pageX && event.pageX > corX - 50)
+                    if (corY + 50 > event.pageY - 100 && event.pageY - 100 > corY - 50)
+                        posizione = "<b>corretta</b>";
+                //$("#buttons").append(square.html());
+                $("#buttons").append("<p>L'immagine è " + immagine + " e la posizione è " + posizione);
+                if (debug)
+                    $("#buttons").append("<p>posizione tua " + event.pageX + " " + event.pageY + " range x: " + (corX + 50) + " " + (corX - 50) + " range y: " + (corY + 50) + "    " + (corY - 50) + " immagine tua: " + data + "; immagine corretta: " + biomi[rand]);
+            }
+            var svg = $("#svg").html();
+            $("#svg").html(svg + '<image xlink:href="' + imgSrc + '" x="' + currentMousePos.x + '"y="' + currentMousePos.y + '"width="' + imgW + 'px" height="' + imgH + 'px"/>');
+            //$("#svg").html(toInsert);
+            //ev.target.parentElement.innerHTML += '<image xlink:href="' + imgSrc + '" x="' + imgX + '" y="0" width="' + imgW + 'px" height="' + imgH + 'px"/>';
+            //img.parentNode.removeChild(img);
+        }
+
+    </script>
+
+    <header class="header">
+        <div id="top" class="title"><h1>BIOMI</h1></div>
+
+    </header>
+
+    <div id="map" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <svg id="svg">
+            <rect id="equatorialesquare" color="green" r="60" x="380" y="430" width="10" height="10" opacity="0%" />
+            <rect id="tropicalesquare" color="darkgreen" r="50" x="680" y="420" width="10" height="10" opacity="0%" />
+            <rect id="lenzuolosquare" color="orange" r="20" x="700" y="380" width="10" height="10" opacity="0%" />
+            <rect id="deciduasquare" color="lightgreen" r="50" x="1000" y="270" width="10" height="10" opacity="0%" />
+            <rect id="sempreverdesquare" color="darkgreen" r="50" x="320" y="200" width="10" height="10" opacity="0%" />
+            <rect id="mediterraneasquare" color="gold" r="50" x="650" y="230" width="10" height="10" opacity="0%" />
+            <rect id="steppasquare" color="grey" r="50" x="900" y="250" width="10" height="10" opacity="0%" />
+            <rect id="taigasquare" color="green" r="50" x="900" y="200" width="10" height="10" opacity="0%" />
+            <rect id="tundrasquare" color="white" r="50" x="250" y="100" width="10" height="10" opacity="0%" />
+            <rect id="desertosquare" color="red" r="50" x="630" y="320" width="10" height="10" opacity="0%" />
+            <rect id="paludesquare" color="green" r="10" x="320" y="300" width="10" height="10" opacity="0%" />
+            <rect id="marinosquare" color="blue" r="100" x="150" y="600" width="10" height="10" opacity="0%" />
+        </svg>
+    </div>
+
+    <div id="buttons" class="scritta"></div>
+
+    <div id="menu">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="equatoriale" src="img/Equatoriale.jpg" width="105" height="73" alt="Amazon">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="tropicale" src="img/tropicale.jpg" width="105" height="73" alt="Tropicale">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="lenzuolo" src="img/lenzuolo.jpg" width="105" height="73" alt="lenzuolo">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="decidua" src="img/decidua.jpg" width="105" height="73" alt="decidua">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="sempreverde" src="img/sempreverde.jpg" width="105" height="73" alt="sempreverde">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="mediterranea" src="img/mediterranea.jpg" width="105" height="73" alt="Mediterranea">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="steppa" src="img/steppa.jpg" width="105" height="73" alt="Steppa">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="taiga" src="img/taiga.jpg" width="105" height="73" alt="Taiga">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="tundra" src="img/tundra.jpg" width="105" height="73" alt="Tundra">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="deserto" src="img/deserto.jpg" width="105" height="73" alt="Deserto">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="palude" src="img/palude.jpg" width="105" height="73" alt="Palude">
+        <img ondragstart="drag(event)" class="draggable" ondragend="" id="marino" src="img/marino.jpg" width="105" height="73" alt="Marino">
+    </div>
+
+    <div id="formsquare" class="formsquare">
+        <form class="form" action="" method="post">
+            <label>Nuovo bioma</label>
+            <input type="text" name="name" placeholder="Nome nuovo bioma" /><br>
+            <label>Coordinate</label>
+            <input type="text" name="bioma" placeholder="x" /><input type="text" name="bioma" placeholder="y" /><br>
+
+            <label>Titolo Articolo</label>
+            <input type="text" name="title" placeholder="Titolo" /><br>
+            <label>Contenuto Articolo</label>
+            <input type="text" name="title" placeholder="Contenuto" /><br>
+
+            <label for="file">Carica Immagine</label>
+            <input type="file" id="file" accept="image/*">
+            <button id="submit" type="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

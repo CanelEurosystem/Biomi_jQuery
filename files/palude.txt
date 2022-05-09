@@ -1,0 +1,12 @@
+<h1> Palude di mangrovie </h1>
+<p>
+E dopo tanta siccità, un po' d'acqua: le mangrovie, dei biomi molto particolari.
+Sono dentro <b>aree inondate d'acqua</b>, alle foci di fiumi, estuari e zone costiere. 
+Al loro interno crescono le mangrovie, alcuni tipi di alberi che sono a diretto contatto con l'acqua 
+(sia dolce che salata) e, quindi, sono molto tolleranti ai sali marini.</p>
+
+<p>
+Questi ospitano un gran numero di organismi acquatici, anfibi, terrestri e uccelli. 
+Sono motori generatori di vita: fanno il nido per quei pesci, molluschi e crostacei dello stadio giovanile. La più grande mangrovia del mondo (con quasi 140.000 ettari), 
+si trova in una delle confluenze del grande fiume Gange in Bangladesh.
+</p>

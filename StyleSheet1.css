@@ -1,0 +1,130 @@
+﻿/* TITOLO */
+
+#header {
+    position: fixed;
+}
+
+.title {
+    text-align: center;
+    font: caption;
+}
+
+/* TASTI a SINISTRA */
+
+.ambienti-group {
+    top: 80px;
+    left: initial;
+    position: absolute;
+    width: 1260px;
+    display: flex;
+}
+
+.ambienti-group button {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    width: 10%;
+    transition: 0.2s;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.ambienti-group button:hover {
+    background-color: lightgreen;
+}
+
+/* SVG */
+
+#map{
+    left: 20%;
+}
+
+#svg {
+    width: 1260px;
+    height: 720px;
+    opacity: 100%;
+    background-size: cover;
+    background-image: url("img/map.gif");
+}
+
+body {
+    background-color: cornflowerblue;
+}
+
+/*  BARRA ARTICOLI  */
+
+.scritta {
+    overflow-x: auto;
+    background-image: url("img/Background.png");
+    background-size: cover;
+    background-color: black;
+    position:absolute;
+    top: 70px;
+    left: 1275px;
+    right: 15px;
+    height: 720px;
+    opacity: 100%;
+}
+
+
+div + div {
+    margin-top: 10px;
+}
+
+h1 {
+    background: white;
+}
+
+p {
+    background: white;
+}
+/*  IMPOSTAZIONI/GAME   */
+.mode {
+    left: 1275px;
+    right: 15px;
+    position: absolute;
+    z-index: 99;
+    top: 800px;
+    bottom: 0px;
+}
+
+.mode button {
+    background-color: #ffffff;
+    width: 100%;
+    transition: 0.2s;
+
+}
+
+.mode button:hover {
+    background-color: lightgreen;
+}
+
+.New {
+    position: absolute;
+    left: 5px;
+    top: 780px;
+}
+/*  IMMAGINI SOTTO  */
+
+#menu {
+    width: 1260px;
+    display: flex;
+}
+
+/*  FORM    */
+.formsquare {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 200px;
+    text-align: center;
+    background-color: #e8eae6;
+    box-sizing: border-box;
+    padding: 10px;
+    z-index: 100;
+    display:none;
+    text-align:left;
+    /*Per rendere il popup invisibile*/
+}

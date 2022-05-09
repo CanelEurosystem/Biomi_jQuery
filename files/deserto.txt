@@ -1,0 +1,18 @@
+<h1> Deserto </h1>
+<p>
+Distribuiti in punti degli Stati Uniti, Messico settentrionale, 
+Sud America (Perù, Cile e Argentina, Africa settentrionale e Australia), 
+sono biomi che nascono da <b>alte temperature e scarse precipitazioni</b> 
+(In alcuni luoghi potrebbe non piovere da anni).
+</p>
+
+<p>
+La scarsità di acqua aggiunta alle scarse sostanze nutritive dei suoi suoli, 
+rende la vegetazione molto scarsa e molto adatta a queste condizioni: è costituita 
+principalmente da arbusti con foglie molto piccole e pungente.</p>
+
+<p>
+La fauna è costituita da quegli esseri letargici specializzati nel resistere 
+alle alte temperature e mancanza di acqua come piccoli rettili, insetti e 
+alcuni mammiferi molto ben adattati come il deserto.
+</p>

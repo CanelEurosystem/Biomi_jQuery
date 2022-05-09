@@ -1,0 +1,12 @@
+<h1> Lenzuolo </h1>
+<p>
+È un bioma che si trova in aree geografiche <b>clima ampiamente piatto caldo</b> 
+e secco. Alberi e arbusti sono pochi e distanti tra loro, 
+mentre abbonda un tipo di piante erbacee: le graminacee.
+</p>
+
+<p>
+Essendo la savana africana un chiaro esempio di ciò, 
+ci sono grandi branchi di erbivori come zebre, gnu e antilopi che 
+convivono con i felini per eccellenza: il leone, il leopardo e il Ghepardo.
+</p>

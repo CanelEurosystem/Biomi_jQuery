@@ -1,0 +1,12 @@
+<h1>Taiga</h1>
+<p>
+È un'estesa foresta che si estende dal Nord America alla Siberia e comprende 
+né più né meno di <b>11% della superficie terrestre</b>. 
+Il clima è freddo e le temperature possono scendere fino a -70ºC 
+in inverno e salire fino a 40ºC in estate.
+<\p>
+<p>
+Ha pochissima biodiversità e ha alberi come pini e abeti, arbusti 
+adattati a condizioni estreme, muschi e licheni. La fauna è costituita 
+principalmente da lupi, renne, orsi, alci e lepri
+<\p>

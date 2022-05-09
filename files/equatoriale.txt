@@ -1,0 +1,22 @@
+<h1> Foresta Equatoriale / Foresta Pluviale Tropicale </h1>
+</div>
+
+<div class=content>
+<p>
+Conosciuto per essere uno dei <b>biomi più produttivi sulla Terra</b>,
+sono il risultato dell'unione di due condizioni climatiche: precipitazioni elevate 
+e temperature calde e uniforme durante tutto l'anno,
+condizioni che si verificano principalmente nelle aree tropicali del Palloncino.
+</p>
+
+<p>
+Nonostante i suoli siano spesso poveri di sostanze nutritive, 
+gli alberi che crescono in questi luoghi sono molto alti e, a loro volta, tempo, non perdono le foglie, 
+poiché si sono adattate per poter catturare l'umidità dell'ambiente anche durante la stagione asciutto.
+ Per questo motivo sono anche conosciute come foreste sempreverdi. Abbondano anche di liane e arbusti.
+</p>
+
+<p>
+Sebbene occupino solo il 6% della superficie terrestre, è un bioma che <b>ospita metà delle specie animali e vegetali del pianeta.</b> 
+Può essere trovato nelle regioni del Brasile, Madagascar, Vietnam, Thailandia, Indonesia e Filippine.
+</p>

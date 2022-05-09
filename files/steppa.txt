@@ -1,0 +1,14 @@
+<h1> Steppe </h1>
+<p>
+La steppa è un bioma che si sviluppa anche nei territori pianeggianti, 
+ma richiede comunque qualche condizioni aride con scarse precipitazioni 
+e un'ampia variazione termica tra estate e inverno. 
+<b>In lei abbondano cespugli ed erbe basse grass</b>.
+</p>
+
+<p>
+Diversi tipi di steppa si distinguono in base alla loro posizione geografica, 
+distinguendo grosso modo le steppe asiatiche con un carattere molto severa, 
+la steppa subtropicale che compare in luoghi della Spagna e la steppa nordamericana 
+che ci offre paesaggi come il Grand Canyon del Colorado.</p>
+<p>
